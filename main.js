@@ -11,7 +11,7 @@ document.querySelector(".box form").addEventListener('submit',function(e){
 function addTask(){
     const tasksDiv =document.querySelector('.tasks');
     const inputTask=document.querySelector(".box form input:first-child").value;
-
+    if(inputTask.length!=0){
     const content=tasksDiv.innerHTML;
     const newTask=`
         <div class='task'>
@@ -21,6 +21,10 @@ function addTask(){
     `;
     tasksDiv.innerHTML=content + newTask;
     count++;
+    }
+    else{
+        alert('please enter a new task');
+    }
 }
 
 function taskFinished(e){
